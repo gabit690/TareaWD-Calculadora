@@ -1,0 +1,106 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*
+Pantalla activada: lightgreen;
+Pantalla desactivada: darkseagreen;
+Panel solar: background: saddlebrown;
+
+*/
+
+body {
+    background: #f3f9fb;
+}
+
+#calculadora {
+    width: 30%;
+    margin: 40px auto;
+    border-radius: 20px;
+    background: #142d4c;
+}
+
+#calculadora > .tornillosDelAparato {
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tornillo {
+    width: 15px;
+    height: 15px;
+    margin: 0px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: slategrey;
+}
+
+#calculadora > #parteSuperior {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#parteSuperior > #brand {
+    font-family: 'Bitter', serif;
+    text-align: center;
+}
+
+#brand > #marca {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: plum;
+    transform: scaleY(1.2);
+}
+
+#brand > #modelo {
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #f3f9fb;
+}
+
+#parteSuperior > #panelSolar {
+    border-collapse: collapse;
+}
+
+/* #panelSolar > tr > td ¿Por que no funciona*/
+#panelSolar td {
+    padding: 20px 20px;
+    border: black 5px solid;
+    background: rgb(43, 44, 22);
+    color: #f3f9fb;
+}
+
+#calculadora > #pantalla {
+    width: 90%;
+    height: 100px;
+    margin: 10px auto;
+    padding-right: 10px;
+    border-radius: 10px;
+    font-size: 4.5em;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 100px;
+    text-align: right;
+    background: darkseagreen;
+}
+
+#calculadora > #tablero {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#tablero button{
+    width: 100%;
+    padding: 10px 25px;
+    font-family: 'Bitter', serif; 
+    font-size: 1.5em;
+}

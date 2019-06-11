@@ -4,9 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculadora Basica</title>
+    <title>Calculadora Básica</title>
+    <link rel="icon" type="image/svg" href="img/calculadora.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div id="calculadora">
+        <div class="tornillosDelAparato">
+            <div class="tornillo"><i class="fas fa-times"></i></div>
+            <div class="tornillo"><i class="fas fa-times"></i></div>
+        </div>
+        <div id="parteSuperior">
+            <div id="brand">
+                <p id="marca">Gabit<i class="far fa-hand-peace"></i></p>
+                <p id="modelo">Bs-6ue9</p>             
+            </div>
+            <table id="panelSolar">
+                <tr>
+                    <td>//</td>
+                    <td>//</td>
+                    <td>//</td>
+                </tr>
+            </table>
+        </div>
+        <div id="pantalla">012345</div>
+        <table id="tablero">
+            <tr>
+                <td><button id="btn_borrado"><i class="fas fa-arrow-left"></i></button></td>
+                <td><button id="btn_limpieza">C</button></td>
+                <td colspan="2"><button id="btn_poder"><i class="fas fa-power-off"></i></button></td>               
+            </tr>
+            <tr>
+                <td><button id="btn_7">7</button></td>
+                <td><button id="btn_8">8</button></td>
+                <td><button id="btn_9">9</button></td>
+                <td><button id="btn_division"><i class="fas fa-divide"></i></button></td>
+            </tr>
+            <tr>
+                <td><button id="btn_4">4</button></td>
+                <td><button id="btn_5">5</button></td>
+                <td><button id="btn_6">6</button></td>
+                <td><button id="btn_multiplicacion"><i class="fas fa-asterisk"></i></button></td>
+            </tr>
+            <tr>
+                <td><button id="btn_1">1</button></td>
+                <td><button id="btn_2">2</button></td>
+                <td><button id="btn_3">3</button></td>
+                <td><button id="btn_sustraccion"><i class="fas fa-minus"></i></button></td>
+            </tr>
+            <tr>
+                <td><button id="btn_0">0</button></td>
+                <td><button id="btn_coma">,</button></td>
+                <td><button id="btn_igualdad"><i class="fas fa-equals"></i></button></td>
+                <td><button id="btn_adicion"><i class="fas fa-plus"></i></button></td>
+            </tr>
+        </table>
+        <div class="tornillosDelAparato">
+            <div class="tornillo"><i class="fas fa-times"></i></div>
+            <div class="tornillo"><i class="fas fa-times"></i></div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/all.js"></script>
 </body>
 </html>
