@@ -37,6 +37,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    font-size: 0.5em;
     background: slategrey;
 }
 
@@ -73,7 +74,7 @@ body {
 /* #panelSolar > tr > td ¿Por que no funciona*/
 #panelSolar td {
     padding: 20px 20px;
-    border: black 5px solid;
+    border: black 3px solid;
     background: rgb(43, 44, 22);
     color: #f3f9fb;
 }
@@ -84,10 +85,11 @@ body {
     margin: 10px auto;
     padding-right: 10px;
     border-radius: 10px;
-    font-size: 4.5em;
+    font-size: 4.0em;
     font-family: 'Ubuntu', sans-serif;
     line-height: 100px;
     text-align: right;
+    overflow: auto;
     background: darkseagreen;
 }
 
@@ -100,7 +102,105 @@ body {
 
 #tablero button{
     width: 100%;
-    padding: 10px 25px;
+    padding: 15px 25px;
     font-family: 'Bitter', serif; 
     font-size: 1.5em;
+}
+
+#btn_borrado {
+    background-color: skyblue;
+    border-radius: 10px;
+}
+
+#btn_limpieza {
+    background-color: skyblue;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#btn_poder {
+    background-color: skyblue;
+    border-radius: 10px;
+    color: green;
+}
+
+#btn_division {
+    background-color: skyblue;
+    border-radius: 10px;
+}
+
+#btn_multiplicacion {
+    background-color: skyblue;
+    border-radius: 10px;
+}
+
+#btn_sustraccion {
+    background-color: skyblue;
+    border-radius: 10px;
+}
+
+#btn_adicion {
+    background-color: skyblue;
+    border-radius: 10px;
+}
+
+#btn_punto {
+    background-color: lightgray;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#btn_igualdad {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_0 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_1 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_2 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_3 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_4 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_5 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_6 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_7 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_8 {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#btn_9 {
+    background-color: lightgray;
+    border-radius: 10px;
 }
