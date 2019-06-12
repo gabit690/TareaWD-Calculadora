@@ -1,15 +1,12 @@
 'use strict'
 
-/*
-5. Realizar una calculadora básica teniendo en cuanta los operadores básicos (suma, resta, división y multiplicación).
-Deberán utilizar HTML, CSS y JavaScript para la misma.
+// 5. Realizar una calculadora básica teniendo en cuanta los operadores básicos (suma, resta, división y multiplicación).
+// Deberán utilizar HTML, CSS y JavaScript para la misma.
 
-Ejemplo:
-    Tener en cuenta que sucede si el usuario ingresa un 0 cuando quiere generar la división. Se deberá dar una respuesta en cada caso.
-*/
+// Ejemplo:
+//     Tener en cuenta que sucede si el usuario ingresa un 0 cuando quiere generar la división. Se deberá dar una respuesta en cada caso.
 
 var pantalla = document.getElementById("pantalla");
-
 var botonCero = document.getElementById("btn_0");
 var botonUno = document.getElementById("btn_1");
 var botonDos = document.getElementById("btn_2");
@@ -20,22 +17,22 @@ var botonSeis = document.getElementById("btn_6");
 var botonSiete = document.getElementById("btn_7");
 var botonOcho = document.getElementById("btn_8");
 var botonNueve = document.getElementById("btn_9");
-
 var botonSuma = document.getElementById("btn_adicion");
 var botonResta = document.getElementById("btn_sustraccion");
 var botonProducto = document.getElementById("btn_multiplicacion");
 var botonDivision = document.getElementById("btn_division");
-
 var botonIgual = document.getElementById("btn_igualdad");
 var botonPunto = document.getElementById("btn_punto");
 var botonRetroceder = document.getElementById("btn_borrado");
 var botonLimpieza = document.getElementById("btn_limpieza");
 var botonPoder = document.getElementById("btn_poder");
 
-/* Elementos que intercienen en una de las operaciones basicas */
+/* Elementos que interVienen en una de las operaciones basicas */
 var primerNumero;
 var operacion;
 var segundoNumero;
+
+var hayUnResultadoEnPantalla = false; 
 
 botonPoder.onclick = function(){
     if(botonPoder.style.color == "red"){
@@ -60,6 +57,11 @@ botonPoder.onclick = function(){
         botonLimpieza.disabled = true;
         botonPoder.style.transform = "rotate(0deg)";
         botonPoder.style.color = "green";
+        pantalla.textContent = "";
+        primerNumero = "";
+        operacion = "";
+        segundoNumero = "";
+        hayUnResultadoEnPantalla = false;
     }
     else{
         pantalla.style.background = "lightgreen"; //Enciende la pantalla.
@@ -87,38 +89,58 @@ botonPoder.onclick = function(){
 }
 
 botonCero.onclick = function(){
-    pantalla.textContent += 0; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 0;
+    }
 };
 botonUno.onclick = function(){
-    pantalla.textContent += 1; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 1;
+    }
 };
 botonDos.onclick = function(){
-    pantalla.textContent += 2; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 2;
+    }
 };
 botonTres.onclick = function(){
-    pantalla.textContent += 3; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 3;
+    }
 };
 botonCuatro.onclick = function(){
-    pantalla.textContent += 4; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 4;
+    }
 };
 botonCinco.onclick = function(){
-    pantalla.textContent += 5; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 5;
+    }
 };
 botonSeis.onclick = function(){
-    pantalla.textContent += 6; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 6;
+    } 
 };
 botonSiete.onclick = function(){
-    pantalla.textContent += 7; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 7;
+    }
 };
 botonOcho.onclick = function(){
-    pantalla.textContent += 8; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 8;
+    }
 };
 botonNueve.onclick = function(){
-    pantalla.textContent += 9; 
+    if(!hayUnResultadoEnPantalla){
+        pantalla.textContent += 9;
+    }
 };
 
 botonPunto.onclick = function(){
-    if(pantalla.textContent.length>0){
+    if((pantalla.textContent.length>0)&&(!hayUnResultadoEnPantalla)){
         pantalla.textContent += '.'; 
         botonPunto.disabled = true;
     }
@@ -132,6 +154,9 @@ botonSuma.onclick = function(){
         if(botonPunto.disabled){
             botonPunto.disabled = false;
         }
+        if(hayUnResultadoEnPantalla){
+            hayUnResultadoEnPantalla = false;
+        }
     }
 };
 
@@ -142,6 +167,9 @@ botonResta.onclick = function(){
         pantalla.textContent = "";
         if(botonPunto.disabled){
             botonPunto.disabled = false;
+        }
+        if(hayUnResultadoEnPantalla){
+            hayUnResultadoEnPantalla = false;
         }
     }
 };
@@ -154,6 +182,9 @@ botonProducto.onclick = function(){
         if(botonPunto.disabled){
             botonPunto.disabled = false;
         }
+        if(hayUnResultadoEnPantalla){
+            hayUnResultadoEnPantalla = false;
+        }
     }
 };
 
@@ -165,13 +196,17 @@ botonDivision.onclick = function(){
         if(botonPunto.disabled){
             botonPunto.disabled = false;
         }
+        if(hayUnResultadoEnPantalla){
+            hayUnResultadoEnPantalla = false;
+        }
     }
 };
 
 
 botonIgual.onclick = function(){
-    if(pantalla.textContent.length>0){
+    if((pantalla.textContent.length>0)&&(!hayUnResultadoEnPantalla)){
         segundoNumero =  parseFloat(pantalla.textContent);
+        hayUnResultadoEnPantalla = true;
         switch(operacion){
             case "+": pantalla.textContent = parseFloat(primerNumero+segundoNumero);
             break;
@@ -186,10 +221,14 @@ botonIgual.onclick = function(){
             else{
                 alert("No se puede divir por 0 (hasta ahora).");
                 pantalla.textContent = "";
+                hayUnResultadoEnPantalla = false;
             }
             break;
             default:
             break;
+        }
+        if(botonPunto.disabled){
+            botonPunto.disabled = false;
         }
         primerNumero = "";
         operacion = "";
@@ -198,7 +237,7 @@ botonIgual.onclick = function(){
 };
 
 botonRetroceder.onclick = function(){
-    if(pantalla.textContent.length>0){
+    if((pantalla.textContent.length>0)&&(!hayUnResultadoEnPantalla)){
         pantalla.textContent = pantalla.textContent.slice(0, pantalla.textContent.length-1);
     }
 };
@@ -208,6 +247,7 @@ botonLimpieza.onclick = function() {
     primerNumero = "";
     operacion = "";
     segundoNumero = "";
+    hayUnResultadoEnPantalla = false;
     if(botonPunto.disabled){
         botonPunto.disabled = false;
     }
